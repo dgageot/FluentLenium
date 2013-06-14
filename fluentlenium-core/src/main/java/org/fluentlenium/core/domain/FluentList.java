@@ -86,7 +86,7 @@ public class  FluentList<E extends FluentWebElement> extends ArrayList<E> implem
                     }
                 }
             }
-            if (atMostOne==false){
+            if (!atMostOne){
                 throw new NoSuchElementException("No element is displayed or enabled. Can't set a new value.");
             }
         }
