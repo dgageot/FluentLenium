@@ -83,11 +83,11 @@ public class FluentWebElementAssert extends GenericAssert<FluentWebElementAssert
     }
 
     private void failIsDisplayed() {
-        super.fail("Object not displayed");
+        throw super.fail("Object not displayed");
     }
 
     private void failIsNotDisplayed() {
-        super.fail("Object is displayed");
+        throw super.fail("Object is displayed");
     }
 
     /**
@@ -135,18 +135,18 @@ public class FluentWebElementAssert extends GenericAssert<FluentWebElementAssert
      */
     public FluentWebElementAssert hasNotText(String textToFind) {
         if(actual.getText().contains(textToFind)){
-            super.fail("The element contain the text: " + textToFind);
+            throw fail("The element contain the text: " + textToFind);
         }
 
        return this;
     }
 
     private void failIsSelected() {
-        super.fail("Object not selected");
+        throw fail("Object not selected");
     }
 
     private void failIsNotSelected() {
-        super.fail("Object is selected");
+        throw fail("Object is selected");
     }
 
 }

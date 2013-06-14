@@ -13,9 +13,6 @@
  */
 package org.fest.assertions.fluentlenium;
 
-import java.util.List;
-
-import org.fest.assertions.GenericAssert;
 import org.fest.assertions.fluentlenium.custom.FluentListAssert;
 import org.fest.assertions.fluentlenium.custom.FluentWebElementAssert;
 import org.fest.assertions.fluentlenium.custom.PageAssert;
