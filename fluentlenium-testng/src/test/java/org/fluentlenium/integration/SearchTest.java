@@ -24,11 +24,9 @@ import org.testng.annotations.Test;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class SearchTest extends LocalFluentCase {
-
-
     @BeforeMethod
     public void beforeTest() {
-        goTo(DEFAULT_URL);
+        goTo("/");
     }
 
     @Test

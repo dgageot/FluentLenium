@@ -28,11 +28,6 @@ public class BaseUrlTest extends LocalFluentCase {
     @Page
     Page2 page;
 
-    @Override
-    public String getDefaultBaseUrl() {
-        return DEFAULT_URL;
-    }
-
     @Test
     public void baseUrlShouldBeUsedForRelativeUrlInGoTo() {
         goTo("/page2.html");

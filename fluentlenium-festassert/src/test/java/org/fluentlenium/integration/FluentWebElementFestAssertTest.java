@@ -23,83 +23,76 @@ public class FluentWebElementFestAssertTest extends LocalFluentCase {
 
     @Test
     public void testIsEnabledOk() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#name")).isEnabled();
     }
 
     @Test(expected = AssertionError.class)
     public void testIsEnabledKo() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isEnabled();
     }
 
-
     @Test
     public void testIsNotEnabledOk() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isNotEnabled();
     }
 
-
     @Test(expected = AssertionError.class)
     public void testIsNotEnabledKo() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#name")).isNotEnabled();
-
     }
 
     @Test
     public void testIsDisplayedOk() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isDisplayed();
     }
 
     @Test(expected = AssertionError.class)
     public void testIsDisplayedKo() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         executeScript("document.getElementById(\"disabled\").style.display=\"none\";");
         assertThat(findFirst("#disabled")).isDisplayed();
     }
 
     @Test
     public void testIsNotDisplayed() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         executeScript("document.getElementById(\"disabled\").style.display=\"none\";");
         assertThat(findFirst("#disabled")).isNotDisplayed();
-
     }
 
     @Test(expected = AssertionError.class)
     public void testIsSelected() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isNotDisplayed();
     }
 
     @Test
     public void testIsNotSelectedOk() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isNotSelected();
     }
 
     @Test(expected = AssertionError.class)
     public void testIsNotSelectedKo() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#selected")).isNotSelected();
 
     }
 
     @Test
     public void testIsSelectedOk() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#selected")).isSelected();
-
     }
 
     @Test(expected = AssertionError.class)
     public void testIsSelectedKo() throws Exception {
-        goTo(DEFAULT_URL);
+        goTo("/");
         assertThat(findFirst("#disabled")).isSelected();
-
     }
-
 }

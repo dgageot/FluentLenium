@@ -29,7 +29,7 @@ class SharedDriverSuperClass extends LocalFluentCase {
 public class SharedDriverSuperClassTest extends SharedDriverSuperClass {
   @Test
   public void firstMethod() {
-    goTo(LocalFluentCase.DEFAULT_URL);
+    goTo("/");
     this.getDriver().manage().addCookie(new Cookie("cookie", "fluent"));
     assertThat($(".small", withName("name"))).hasSize(1);
   }
@@ -39,6 +39,4 @@ public class SharedDriverSuperClassTest extends SharedDriverSuperClass {
     assertThat($(".small", withName("name"))).hasSize(1);
     assertThat(this.getCookie("cookie")).isNull();
   }
-
-
 }

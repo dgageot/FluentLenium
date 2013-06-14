@@ -14,22 +14,18 @@
 
 package org.fluentlenium.integration;
 
-import org.fluentlenium.integration.localtest.SauceLabsFluentCase;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
+import static org.fest.assertions.Assertions.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
-import static org.fest.assertions.Assertions.assertThat;
+import org.fluentlenium.integration.localtest.*;
+import org.junit.*;
+import org.junit.rules.*;
 
-
-public class TakeSnapshotOnLabsTest extends SauceLabsFluentCase {
-
-
+public class TakeSnapshotOnPhantomJsTest extends PhantomJsFluentCase {
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
+
     @Test
     public void can_take_a_snapshot() throws IOException {
         goTo(DEFAULT_URL);
@@ -37,6 +33,4 @@ public class TakeSnapshotOnLabsTest extends SauceLabsFluentCase {
         takeScreenShot(absolutePath);
         assertThat(new File(absolutePath)).exists();
     }
-
-
 }

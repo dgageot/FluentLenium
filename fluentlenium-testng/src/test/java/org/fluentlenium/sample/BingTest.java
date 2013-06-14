@@ -15,10 +15,15 @@
 package org.fluentlenium.sample;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static org.fluentlenium.adapter.util.SharedDriver.SharedType.PER_CLASS;
 
 import org.fluentlenium.adapter.FluentTestNg;
+import org.fluentlenium.adapter.util.*;
+import org.fluentlenium.headless.*;
+import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
+@SharedDriver(type = PER_CLASS)
 public class BingTest extends FluentTestNg {
 
     @Test
@@ -45,4 +50,8 @@ public class BingTest extends FluentTestNg {
         assertThat(title()).contains("FluentLenium");
     }
 
+    @Override
+    public WebDriver getDefaultDriver() {
+        return new PhantomJsDownloader().createDriver();
+    }
 }

@@ -24,23 +24,16 @@ import static org.fluentlenium.core.filter.FilterConstructor.withName;
 
 @SharedDriver(deleteCookies = false)
 public class SharedDriverKeepCookiesTest extends LocalFluentCase {
-
   @Test
   public void firstMethod() {
-    goTo(LocalFluentCase.DEFAULT_URL);
+    goTo("/");
     assertThat($(".small", withName("name"))).hasSize(1);
     this.getDriver().manage().addCookie(new Cookie("cookie", "fluent"));
   }
-
 
   @Test
   public void secondMethod() {
     assertThat($(".small", withName("name"))).hasSize(1);
     assertThat(this.getCookie("cookie").getValue()).isEqualTo("fluent");
   }
-
-
-
-
-
 }

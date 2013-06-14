@@ -12,23 +12,19 @@
  * limitations under the License
  */
 
-package org.fluentlenium.integration.shareddriver;
+package org.fluentlenium.integration.localtest;
 
-import org.fluentlenium.integration.localtest.LocalFluentCase;
-import org.testng.annotations.Test;
+import static org.fluentlenium.adapter.util.SharedDriver.SharedType.PER_CLASS;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static org.fluentlenium.core.filter.FilterConstructor.withName;
+import org.fluentlenium.adapter.util.*;
+import org.fluentlenium.headless.*;
+import org.openqa.selenium.*;
 
-public class DriverPerMethodTest extends LocalFluentCase {
-  @Test
-  public void firstMethod() {
-    goTo("/");
-    assertThat($(".small", withName("name"))).hasSize(1);
-  }
-
-  @Test
-  public void secondMethod() {
-    assertThat($(".small", withName("name"))).hasSize(0);
-  }
+@SharedDriver(type = PER_CLASS)
+public abstract class PhantomJsFluentCase extends LocalFluentCase {
+    @Override
+    public WebDriver getDefaultDriver() {
+        return new PhantomJsDownloader().createDriver();
+    }
 }
+

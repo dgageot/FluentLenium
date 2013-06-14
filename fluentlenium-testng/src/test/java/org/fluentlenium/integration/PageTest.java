@@ -83,7 +83,7 @@ class PageAccueil extends FluentPage {
 
     @Override
     public String getUrl() {
-        return LocalFluentCase.DEFAULT_URL;
+        return "/";
     }
 
     @Override
@@ -101,10 +101,9 @@ class PageAccueil extends FluentPage {
 }
 
 class Page2 extends FluentPage {
-
     @Override
     public String getUrl() {
-        return LocalFluentCase.DEFAULT_URL + "/page2.html";
+        return "/page2.html";
     }
 
     @Override

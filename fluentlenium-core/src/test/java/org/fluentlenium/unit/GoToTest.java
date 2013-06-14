@@ -34,7 +34,7 @@ public class GoToTest extends LocalFluentCase {
     @Test
     public void checkGoToUrl() {
         goTo(DEFAULT_URL);
-        verify(webDriver).get(DEFAULT_URL);
+        verify(webDriver).get(getDefaultBaseUrl());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -54,7 +54,7 @@ public class GoToTest extends LocalFluentCase {
     public void checkGoToPage() {
         FluentPage page = createPage(MyPage.class);
         goTo(page);
-        verify(webDriver).get(DEFAULT_URL);
+        verify(webDriver).get(getDefaultBaseUrl());
     }
 
     @Override

@@ -24,10 +24,9 @@ import static org.fluentlenium.core.filter.FilterConstructor.withName;
 @SharedDriver(type = SharedDriver.SharedType.PER_CLASS)
 @Test(groups = "DriverPerClass1",suiteName = "PerClass")
 public class DriverPerClassTest extends LocalFluentCase {
-
   @Test
   public void firstMethod() {
-    goTo(LocalFluentCase.DEFAULT_URL);
+    goTo("/");
     assertThat($(".small", withName("name"))).hasSize(1);
   }
 
@@ -36,8 +35,4 @@ public class DriverPerClassTest extends LocalFluentCase {
   public void secondMethod() {
     assertThat($(".small", withName("name"))).hasSize(1);
   }
-
-
-
-
 }

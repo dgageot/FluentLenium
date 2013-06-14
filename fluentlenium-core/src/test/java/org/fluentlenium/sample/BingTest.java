@@ -14,13 +14,12 @@
 
 package org.fluentlenium.sample;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.fest.assertions.Assertions.*;
 
-import org.fluentlenium.adapter.FluentTest;
-import org.junit.Test;
+import org.fluentlenium.integration.localtest.*;
+import org.junit.*;
 
-public class BingTest extends FluentTest {
-
+public class BingTest extends PhantomJsFluentCase {
     @Test
     public void title_of_bing_should_contain_search_query_name_using_festassert() {
         goTo("http://www.bing.com");
@@ -44,5 +43,4 @@ public class BingTest extends FluentTest {
         $("#sb_form_go").submit();
         assertThat(title()).contains("FluentLenium");
     }
-
 }

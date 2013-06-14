@@ -27,11 +27,10 @@ import static org.fluentlenium.core.filter.FilterConstructor.withName;
 public class SharedDriverDeleteCookies extends LocalFluentCase {
     @Test
     public void cookieFirstMethod() {
-        goTo(LocalFluentCase.DEFAULT_URL);
+        goTo("/");
         assertThat($(".small", withName("name"))).hasSize(1);
         this.getDriver().manage().addCookie(new Cookie("cookie", "fluent"));
     }
-
 
     @Test
     public void cookieSecondMethod() {

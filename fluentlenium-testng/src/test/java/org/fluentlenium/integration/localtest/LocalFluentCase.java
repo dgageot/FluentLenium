@@ -14,12 +14,29 @@
 
 package org.fluentlenium.integration.localtest;
 
+import java.io.*;
+
 import org.fluentlenium.adapter.FluentTestNg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public abstract class LocalFluentCase extends FluentTestNg {
-    public static final String DEFAULT_URL = "http://localhost:8787/static/";
+    private static String url;
+
+    public String getDefaultBaseUrl() {
+        if (url != null) {
+            return url;
+        }
+
+        TestWebServer testWebServer = new TestWebServer();
+        try {
+            int port = testWebServer.startOnRandomPort();
+            url = "http://localhost:" + port + "/";
+            return url;
+        } catch (IOException e) {
+            throw new IllegalStateException("Unable to start http server", e);
+        }
+    }
 
     @Override
     public WebDriver getDefaultDriver() {

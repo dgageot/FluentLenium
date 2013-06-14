@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @Cucumber.Options(features = "classpath:org/fluentlenium/cucumber", format = {"pretty", "html:target/cucumber", "json:target/cucumber.json"})
-public class BasicRunner {
+public class BasicTest {
 
 
 }

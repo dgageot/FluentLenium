@@ -14,29 +14,16 @@
 
 package org.fluentlenium.integration;
 
+import static org.fest.assertions.Assertions.*;
+import static org.fluentlenium.adapter.util.SharedDriver.SharedType.*;
 
-import org.fluentlenium.integration.localtest.SauceLabsFluentCase;
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.concurrent.*;
 
-import java.util.concurrent.TimeUnit;
+import org.fluentlenium.adapter.util.*;
+import org.fluentlenium.integration.localtest.*;
+import org.junit.*;
 
-import static org.fest.assertions.Assertions.assertThat;
-
-public class DefaultWaitOnLabsTest extends SauceLabsFluentCase {
-    @Before
-    public void before() {
-        goTo(DEFAULT_URL);
-
-    }
-
-    @Override
-    public WebDriver getDefaultDriver() {
-        return new FirefoxDriver();
-    }
-
+public class DefaultWaitOnPhantomJsTest extends PhantomJsFluentCase {
     @Override
     public void setDefaultConfig() {
         withDefaultSearchWait(5, TimeUnit.HOURS);
@@ -47,6 +34,4 @@ public class DefaultWaitOnLabsTest extends SauceLabsFluentCase {
         goTo(JAVASCRIPT_URL);
         assertThat(find("#newField")).hasSize(1);
     }
-
-
 }
