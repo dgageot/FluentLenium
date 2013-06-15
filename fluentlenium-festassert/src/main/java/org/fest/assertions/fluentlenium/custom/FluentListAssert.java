@@ -36,8 +36,7 @@ public class FluentListAssert extends GenericAssert<FluentListAssert, FluentList
                 return this;
             }
         }
-        super.fail("No selected elements contains text: " + textToFind + " . Actual texts found : " + actualTexts);
-        return this;
+        throw super.fail("No selected elements contains text: " + textToFind + " . Actual texts found : " + actualTexts);
     }
 
    /**
@@ -49,7 +48,7 @@ public class FluentListAssert extends GenericAssert<FluentListAssert, FluentList
         List<String> actualTexts = actual.getTexts();
         for(String text : actualTexts) {
             if(text.contains(textToFind)){
-                super.fail("At least one selected elements contains text: " + textToFind + " . Actual texts found : " + actualTexts);
+                throw fail("At least one selected elements contains text: " + textToFind + " . Actual texts found : " + actualTexts);
             }
         }
         return this;
@@ -57,7 +56,7 @@ public class FluentListAssert extends GenericAssert<FluentListAssert, FluentList
 
 	public FluentListAssert hasSize(int expectedSize) {
 		if(actual.size() != expectedSize) {
-			super.fail("Expected size: " + expectedSize + ". Actual size: " + actual.size() + ".");
+            throw fail("Expected size: " + expectedSize + ". Actual size: " + actual.size() + ".");
 		}
 		return this;
 	}
@@ -70,7 +69,7 @@ public class FluentListAssert extends GenericAssert<FluentListAssert, FluentList
 	 * Used in FluentListSizeBuilder to raise AssertionError
 	 */
 	void internalFail(String reason) {
-		super.fail(reason);
+        throw fail(reason);
 	}
 	
 }

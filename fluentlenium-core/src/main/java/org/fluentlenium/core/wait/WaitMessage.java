@@ -42,69 +42,68 @@ public class WaitMessage {
     private static final String IS_NOT_DISPLAY = " is not displayed";
     private static final String IS_NOT_ENABLED = " is not enabled";
 
-    static final String hasSizeMessage(String selector, int size) {
+    static String hasSizeMessage(String selector, int size) {
         return SELECTOR + selector + HAS_NOT_THE_SIZE + size + POINT;
     }
 
-    static final String hasAttributeMessage(String selector, String attribute, String value) {
+    static String hasAttributeMessage(String selector, String attribute, String value) {
         return SELECTOR + selector + WITH_ATTRIBUTE + attribute + WITH_VALUE + value + IS_NOT_PRESENT + POINT;
     }
 
-    static final String isPageLoaded(String url) {
+    static String isPageLoaded(String url) {
         return PAGE + url + IS_NOT_LOADED + POINT;
     }
 
-    static final String isPresentMessage(String selector) {
+    static String isPresentMessage(String selector) {
         return SELECTOR + selector + IS_NOT_PRESENT;
     }
 
-      static final String isNotPresentMessage(String selector) {
+    static String isNotPresentMessage(String selector) {
         return SELECTOR + selector + IS_PRESENT;
     }
 
-    static final String isDisplayedMessage(String selector) {
+    static String isDisplayedMessage(String selector) {
         return SELECTOR + selector + IS_NOT_DISPLAY;
     }
 
-	static final String isEnabledMessage(String selector) {
+	static String isEnabledMessage(String selector) {
         return SELECTOR + selector + IS_NOT_ENABLED;
     }
 
-    static final String hasTextMessage(String selector, String value) {
+    static String hasTextMessage(String selector, String value) {
         return SELECTOR + selector + HAS_NOT_THE_TEXT + value + POINT;
     }
 
-    static final String hasNameMessage(String selector, String value) {
+    static String hasNameMessage(String selector, String value) {
         return SELECTOR + selector + HAS_NOT_THE_NAME + value + POINT;
     }
 
-    static final String hasIdMessage(String selector, String value) {
+    static String hasIdMessage(String selector, String value) {
         return SELECTOR + selector + HAS_NOT_THE_ID + value + POINT;
     }
 
-    static final String equalToMessage(String selector, int size) {
+    static String equalToMessage(String selector, int size) {
         return SELECTOR + selector + HAS_NOT_SIZE_EQUAL_TO + size + POINT;
     }
 
-    static final String lessThanOrEqualToMessage(String selector, int size) {
+    static String lessThanOrEqualToMessage(String selector, int size) {
         return SELECTOR + selector + IS_NOT_LESS_THAN_OR_EQUAL_TO + size + POINT;
     }
 
-    static final String notEqualToMessage(String selector, int size) {
+    static String notEqualToMessage(String selector, int size) {
         return SELECTOR + selector + IS_EQUAL_TO + size + POINT;
     }
 
-    static final String lessThanMessage(String selector, int size) {
+    static String lessThanMessage(String selector, int size) {
         return SELECTOR + selector + IS_NOT_LESS_THAN + size + POINT;
     }
 
-    static final String greatherThanOrEqualToMessage(String selector, int size) {
+    static String greatherThanOrEqualToMessage(String selector, int size) {
         return SELECTOR + selector + IS_NOT_GREATHER_THAN_OR_EQUAL_TO + size + POINT;
     }
 
-    static final String greatherThanMessage(String selector, int size) {
+    static String greatherThanMessage(String selector, int size) {
         return SELECTOR + selector + IS_NOT_GREATHER_THAN + size + POINT;
     }
-
 }
 

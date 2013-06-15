@@ -24,7 +24,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 /**
- * All TestNG Test should extends this class. It provides default parameters.
+ * All TestNG Test should extend this class. It provides default parameters.
  */
 public abstract class FluentTestNg extends FluentAdapter {
 
